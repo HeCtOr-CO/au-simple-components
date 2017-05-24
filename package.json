@@ -2,7 +2,7 @@
   "name": "au-simple-components",
   "version": "0.1.0",
   "description": "Aurelia simple components",
-  "main": "dist/au-simple-components.js",
+  "main": "dist/commonjs/au-simple-components.js",
   "scripts": {
     "build": "gulp"
   },
