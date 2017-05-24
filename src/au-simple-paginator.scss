@@ -1,0 +1,28 @@
+$background-color: #fefefe;
+$button-background-color: #14679e;
+
+.au-simple-paginator {
+  button {
+    border-radius: 4px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  a {
+    padding: 4px;
+  }
+
+  a:hover {
+    background-color: $background-color;
+    padding: 4px;
+  }
+
+  span.disabled {
+    cursor: not-allowed;
+    color: $button-background-color;
+    opacity: .5;
+    padding: 4px;
+  }
+}
