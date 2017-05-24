@@ -12,7 +12,10 @@
     "components"
   ],
   "author": "Hector Carballo",
-  "repository": "https://github.com/HeCtOr-CO/au-simple-components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HeCtOr-CO/au-simple-components"
+  },
   "license": "MIT",
   "dependencies": {
     "aurelia-dependency-injection": "^1.3.1",
