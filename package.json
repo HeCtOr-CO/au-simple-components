@@ -11,7 +11,11 @@
     "simple",
     "components"
   ],
-  "author": "Hector Carballo",
+  "author": {
+    "name": "Hector Carballo",
+    "email": "hectorcarballo.hco@gmail.com",
+    "url": "https://github.com/HeCtOr-CO"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/HeCtOr-CO/au-simple-components"
@@ -28,5 +32,6 @@
     "gulp-sass": "^3.1.0",
     "gulp-typescript": "^3.1.6",
     "typescript": "^2.3.3"
-  }
+  },
+  "typings": "dist/commonjs/au-simple-components.d.ts"
 }
