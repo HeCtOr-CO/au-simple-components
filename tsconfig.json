@@ -14,7 +14,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": false,
     "noImplicitReturns": true,
-    "strictNullChecks": true,
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,

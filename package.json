@@ -23,15 +23,20 @@
   "license": "MIT",
   "dependencies": {
     "aurelia-dependency-injection": "^1.3.1",
+    "aurelia-event-aggregator": "^1.0.1",
     "aurelia-framework": "^1.1.2",
-    "aurelia-templating": "^1.4.2"
+    "aurelia-templating": "^1.4.2",
+    "block-ui": "^2.70.1",
+    "jquery": "^2.2.4",
+    "toastr": "^2.1.2"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-sass": "^3.1.0",
     "gulp-typescript": "^3.1.6",
-    "typescript": "^2.3.3"
+    "typescript": "^2.3.3",
+    "typings": "^2.1.1"
   },
   "typings": "dist/commonjs/au-simple-components.d.ts"
 }
