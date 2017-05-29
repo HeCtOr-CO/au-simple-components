@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
-require("./au-event-dispatcher");
+require("./event-dispatcher");
 var SimplePaginator = (function () {
     function SimplePaginator(element) {
         this.element = element;
