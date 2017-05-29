@@ -4,9 +4,9 @@ declare global {
   }
 }
 
-export class AuEventDispatcher {
+export class EventDispatcher {
   constructor() {
-    (<any>Element.prototype).dispatch = AuEventDispatcher.dispatchEvent;
+    (<any>Element.prototype).dispatch = EventDispatcher.dispatchEvent;
   }
 
   private static dispatchEvent() {
@@ -30,5 +30,5 @@ export class AuEventDispatcher {
 
 }
 
-let eventDispatcher: AuEventDispatcher;
-eventDispatcher = new AuEventDispatcher();
+let eventDispatcher: EventDispatcher;
+eventDispatcher = new EventDispatcher();

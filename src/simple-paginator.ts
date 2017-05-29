@@ -2,7 +2,7 @@ import { inject, bindable, computedFrom } from 'aurelia-framework';
 import './au-event-dispatcher';
 
 @inject(Element)
-export class AuSimplePaginator {
+export class SimplePaginator {
   @bindable totalCount: number;
   @bindable pageNumber: number;
   @bindable pageSize: number;
