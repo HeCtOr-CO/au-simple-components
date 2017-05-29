@@ -1,4 +1,4 @@
-import './au-event-dispatcher';
+import './event-dispatcher';
 export declare class SimplePaginator {
     private element;
     totalCount: number;

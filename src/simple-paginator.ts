@@ -1,5 +1,5 @@
 import { inject, bindable, computedFrom } from 'aurelia-framework';
-import './au-event-dispatcher';
+import './event-dispatcher';
 
 @inject(Element)
 export class SimplePaginator {
