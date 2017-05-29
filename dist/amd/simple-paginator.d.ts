@@ -1,5 +1,5 @@
 import './au-event-dispatcher';
-export declare class AuSimplePaginator {
+export declare class SimplePaginator {
     private element;
     totalCount: number;
     pageNumber: number;

@@ -7,52 +7,52 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-framework", "./au-event-dispatcher"], function (require, exports, aurelia_framework_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var AuSimplePaginator = (function () {
-        function AuSimplePaginator(element) {
+    var SimplePaginator = (function () {
+        function SimplePaginator(element) {
             this.element = element;
         }
-        AuSimplePaginator.prototype.first = function () {
+        SimplePaginator.prototype.first = function () {
             if (this.hasPrevious) {
                 this.pageNumber = 1;
                 this.paginate();
             }
         };
-        AuSimplePaginator.prototype.previous = function () {
+        SimplePaginator.prototype.previous = function () {
             if (this.hasPrevious) {
                 this.pageNumber -= 1;
                 this.paginate();
             }
         };
-        AuSimplePaginator.prototype.next = function () {
+        SimplePaginator.prototype.next = function () {
             if (this.hasNext) {
                 this.pageNumber += 1;
                 this.paginate();
             }
         };
-        AuSimplePaginator.prototype.last = function () {
+        SimplePaginator.prototype.last = function () {
             if (this.hasNext) {
                 this.pageNumber = this.totalCount / this.pageSize;
                 this.paginate();
             }
         };
-        AuSimplePaginator.prototype.paginate = function () {
+        SimplePaginator.prototype.paginate = function () {
             this.element.dispatch('paginate', this.pageNumber);
         };
-        Object.defineProperty(AuSimplePaginator.prototype, "hasPrevious", {
+        Object.defineProperty(SimplePaginator.prototype, "hasPrevious", {
             get: function () {
                 return this.pageNumber > 1;
             },
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(AuSimplePaginator.prototype, "hasNext", {
+        Object.defineProperty(SimplePaginator.prototype, "hasNext", {
             get: function () {
                 return this.pageNumber < this.totalCount / this.pageSize;
             },
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(AuSimplePaginator.prototype, "status", {
+        Object.defineProperty(SimplePaginator.prototype, "status", {
             get: function () {
                 if (!this.totalCount || this.totalCount == 0 || !this.pageSize || this.pageSize == 0)
                     return "Sin resultados";
@@ -64,28 +64,28 @@ define(["require", "exports", "aurelia-framework", "./au-event-dispatcher"], fun
             enumerable: true,
             configurable: true
         });
-        return AuSimplePaginator;
+        return SimplePaginator;
     }());
     __decorate([
         aurelia_framework_1.bindable
-    ], AuSimplePaginator.prototype, "totalCount", void 0);
+    ], SimplePaginator.prototype, "totalCount", void 0);
     __decorate([
         aurelia_framework_1.bindable
-    ], AuSimplePaginator.prototype, "pageNumber", void 0);
+    ], SimplePaginator.prototype, "pageNumber", void 0);
     __decorate([
         aurelia_framework_1.bindable
-    ], AuSimplePaginator.prototype, "pageSize", void 0);
+    ], SimplePaginator.prototype, "pageSize", void 0);
     __decorate([
         aurelia_framework_1.computedFrom('pageNumber')
-    ], AuSimplePaginator.prototype, "hasPrevious", null);
+    ], SimplePaginator.prototype, "hasPrevious", null);
     __decorate([
         aurelia_framework_1.computedFrom('pageNumber', 'totalCount', 'pageSize')
-    ], AuSimplePaginator.prototype, "hasNext", null);
+    ], SimplePaginator.prototype, "hasNext", null);
     __decorate([
         aurelia_framework_1.computedFrom('pageNumber', 'totalCount', 'pageSize')
-    ], AuSimplePaginator.prototype, "status", null);
-    AuSimplePaginator = __decorate([
+    ], SimplePaginator.prototype, "status", null);
+    SimplePaginator = __decorate([
         aurelia_framework_1.inject(Element)
-    ], AuSimplePaginator);
-    exports.AuSimplePaginator = AuSimplePaginator;
+    ], SimplePaginator);
+    exports.SimplePaginator = SimplePaginator;
 });

@@ -4,13 +4,16 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
-__export(require("./au-event-dispatcher"));
-var au_simple_paginator_1 = require("./au-simple-paginator");
-exports.AuSimplePaginator = au_simple_paginator_1.AuSimplePaginator;
+__export(require("./block-element"));
+__export(require("./data-service"));
+__export(require("./event-dispatcher"));
+__export(require("./event-notifier"));
+__export(require("./notifier"));
+__export(require("./paginable"));
+__export(require("./simple-paginator"));
 function configure(config) {
     config.globalResources([
-        aurelia_framework_1.PLATFORM.moduleName('./au-simple-paginator'),
-        aurelia_framework_1.PLATFORM.moduleName('./au-event-dispatcher')
+        aurelia_framework_1.PLATFORM.moduleName('./simple-paginator')
     ]);
 }
 exports.configure = configure;

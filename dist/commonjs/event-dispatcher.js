@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var AuEventDispatcher = (function () {
-    function AuEventDispatcher() {
-        Element.prototype.dispatch = AuEventDispatcher.dispatchEvent;
+var EventDispatcher = (function () {
+    function EventDispatcher() {
+        Element.prototype.dispatch = EventDispatcher.dispatchEvent;
     }
-    AuEventDispatcher.dispatchEvent = function () {
+    EventDispatcher.dispatchEvent = function () {
         var element = this;
         var eventName = arguments[0];
         var eventDetail = arguments[1];
@@ -23,8 +23,8 @@ var AuEventDispatcher = (function () {
         }
         element.dispatchEvent(customEvent);
     };
-    return AuEventDispatcher;
+    return EventDispatcher;
 }());
-exports.AuEventDispatcher = AuEventDispatcher;
+exports.EventDispatcher = EventDispatcher;
 var eventDispatcher;
-eventDispatcher = new AuEventDispatcher();
+eventDispatcher = new EventDispatcher();

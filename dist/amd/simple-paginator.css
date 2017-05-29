@@ -1,17 +1,17 @@
-.au-simple-paginator button {
+.simple-paginator button {
   border-radius: 4px; }
 
-.au-simple-paginator label {
+.simple-paginator label {
   font-size: 16px; }
 
-.au-simple-paginator a {
+.simple-paginator a {
   padding: 4px; }
 
-.au-simple-paginator a:hover {
+.simple-paginator a:hover {
   background-color: #fefefe;
   padding: 4px; }
 
-.au-simple-paginator span.disabled {
+.simple-paginator span.disabled {
   cursor: not-allowed;
   color: #14679e;
   opacity: .5;

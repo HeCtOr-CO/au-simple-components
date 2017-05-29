@@ -3,7 +3,7 @@ declare global  {
         dispatch(name: string, data: any): void;
     }
 }
-export declare class AuEventDispatcher {
+export declare class EventDispatcher {
     constructor();
     private static dispatchEvent();
 }
