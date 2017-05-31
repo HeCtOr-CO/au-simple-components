@@ -1,0 +1,14 @@
+.simple-chip-list .chip {
+  display: inline-block;
+  background-color: #1779BA;
+  color: white;
+  padding: 6px;
+  margin: 2px;
+  font-size: .85rem;
+  border-radius: 4px;
+  transition: background-color 1s; }
+  .simple-chip-list .chip .remove {
+    cursor: pointer; }
+  .simple-chip-list .chip.highlight {
+    background-color: #FFAE00;
+    transition: none; }

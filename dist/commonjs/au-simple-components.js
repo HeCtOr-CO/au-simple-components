@@ -11,9 +11,11 @@ __export(require("./event-notifier"));
 __export(require("./notifier"));
 __export(require("./paginable"));
 __export(require("./simple-paginator"));
+__export(require("./simple-chip-list"));
 function configure(config) {
     config.globalResources([
-        aurelia_framework_1.PLATFORM.moduleName('./simple-paginator')
+        aurelia_framework_1.PLATFORM.moduleName('./simple-paginator'),
+        aurelia_framework_1.PLATFORM.moduleName('./simple-chip-list')
     ]);
 }
 exports.configure = configure;

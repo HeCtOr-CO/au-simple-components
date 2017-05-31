@@ -1,0 +1,8 @@
+<template>
+  <require from="./simple-chip-list.css"></require>
+  <div class="simple-chip-list">
+    <div repeat.for="chip of chips" class="chip ${chip.highlighted? 'highlight' : ''}">
+      ${chip.text}<i click.delegate="removeChip(chip)" title="Quitar" class="fa fa-times fa-fw remove"></i>
+    </div>
+  </div>
+</template>
