@@ -1,8 +1,10 @@
-import { inject } from 'aurelia-framework';
+import { inject, bindable } from 'aurelia-framework';
 
 @inject(Element)
 export class SimpleChipList {
   private chips: Array<Chip>;
+
+  @bindable items: Array<any>;
 
   constructor(private element: Element) {
     this.chips = [];
@@ -50,6 +52,20 @@ export class SimpleChipList {
     if (notify) {
       this.element.dispatch('removed', chips);
     }
+  }
+
+  bindItems() {
+    if (this.items && this.items.length) {
+      this.addChip(this.items.map(i => new Chip(i.text, i.data)));
+    }
+  }
+
+  bind() {
+    this.bindItems();
+  }
+
+  itemsChanged() {
+    this.bindItems();
   }
 
 }

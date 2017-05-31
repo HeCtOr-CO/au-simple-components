@@ -1,6 +1,7 @@
-$chip-background-color: #1779BA;
+$chip-background-color: rgba(23, 121, 186, .75);
 $chip-highlighted-background-color: #FFAE00;
 $chip-text-color: white;
+$chip-clear-all-background-color: #CC4B37;
 
 .simple-chip-list {
   .chip {
@@ -22,5 +23,10 @@ $chip-text-color: white;
       transition: none;
     }
 
+  }
+
+  .clear-all {
+    background-color: $chip-clear-all-background-color;
+    cursor: pointer;
   }
 }
