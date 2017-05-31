@@ -11,6 +11,7 @@ export * from './simple-chip-list';
 
 export function configure(config: FrameworkConfiguration): void {
   config.globalResources([
-    PLATFORM.moduleName('./simple-paginator')
+    PLATFORM.moduleName('./simple-paginator'),
+    PLATFORM.moduleName('./simple-chip-list')
   ]);
 }
