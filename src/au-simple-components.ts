@@ -7,6 +7,7 @@ export * from './event-notifier';
 export * from './notifier';
 export * from './paginable';
 export * from './simple-paginator';
+export * from './simple-chip-list';
 
 export function configure(config: FrameworkConfiguration): void {
   config.globalResources([

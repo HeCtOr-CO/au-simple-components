@@ -1,0 +1,26 @@
+$chip-background-color: #1779BA;
+$chip-highlighted-background-color: #FFAE00;
+$chip-text-color: white;
+
+.simple-chip-list {
+  .chip {
+    display: inline-block;
+    background-color: $chip-background-color;
+    color: $chip-text-color;
+    padding: 6px;
+    margin: 2px;
+    font-size: .85rem;
+    border-radius: 4px; 
+    transition: background-color 1s;
+
+    .remove {
+      cursor: pointer;
+    }
+
+    &.highlight {
+      background-color: $chip-highlighted-background-color;
+      transition: none;
+    }
+
+  }
+}
