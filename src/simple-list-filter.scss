@@ -1,0 +1,86 @@
+$list-filter-background-color: white;
+$list-filter-head-background-color-hover: #F6F6F6;
+$list-filter-select-unselect-color: gray;
+$list-filter-option-background-color-hover: #F9F9F9;
+
+.simple-list-filter {
+  max-width: 640px;
+  background-color: $list-filter-background-color;
+  padding: 0 0 1rem 0;
+
+  .head {
+    display: flex;
+    cursor: pointer;
+    padding: 8px 8px 4px 8px;
+
+    h4 {
+      margin: 0;
+      flex: calc(100% - 20px);
+      font-size: .875rem;
+      font-weight: 600;
+      line-height: 2;
+    }
+
+    .collapse-uncollapse {
+      flex: 20px;
+      opacity: .5;
+    }
+
+    &:hover {
+      background-color: $list-filter-head-background-color-hover;
+    }
+  }
+
+  .body {
+    flex: 100%;
+    margin-left: 10px;
+    max-height: 275px;
+    overflow: hidden;
+    transition: height .5s;
+
+    label.select-unselect {
+      font-size: .875rem;
+      font-style: italic;
+      color: $list-filter-select-unselect-color;
+      cursor: pointer;
+    }
+
+    .options-container {
+
+      max-height: 250px;
+      overflow-y: auto;
+
+      .option {
+        display: flex;
+        cursor: pointer;
+        margin-bottom: 1px;
+        padding: 4px;
+
+        .checkbox {
+          flex: 25px;
+        }
+
+        .text {
+          flex: calc(100% - 50px);
+          font-size: .875rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: 1;
+        }
+
+        .count {
+          flex: 25px;
+          font-size: .875rem;
+          text-align: right;
+          line-height: 1;
+        }
+
+        &:hover {
+          background-color: $list-filter-option-background-color-hover;
+        }
+      }
+
+    }
+  }
+}

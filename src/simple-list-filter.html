@@ -1,0 +1,25 @@
+<template>
+  <require from="./simple-list-filter.css"></require>
+  <div class="simple-list-filter">
+    <div class="head" click.delegate="collapseUncollapse()">
+      <h4>
+        ${title}
+      </h4>
+      <div class="collapse-uncollapse">
+        <i class="fa ${isCollapsed?'fa-chevron-down': 'fa-chevron-up'}"></i>
+      </div>
+    </div>
+    <div ref="filterBodyElement" class="body">
+      <label click.delegate="toggleAll()" class="select-unselect">
+        seleccionar/deselecionar todo
+      </label>
+      <div ref="filterOptionsElement" class="options-container">
+        <div repeat.for="filter of filters" click.delegate="filter.toggle()" title="${filter.text}" class="option">
+          <i class="fa fa-fw checkbox ${filter.isChecked? 'fa-check-square-o' : 'fa-square-o'}"></i>
+          <span class="text">${filter.text}</span>
+          <span class="count">${filter.count >= 0? filter.count : ''}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
