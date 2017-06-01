@@ -1,12 +1,12 @@
-$chip-background-color: #1779BA;
-$chip-highlighted-background-color: #FFAE00;
-$chip-text-color: white;
+$chip-list-background-color: #1779BA;
+$chip-list-highlighted-background-color: #FFAE00;
+$chip-list-text-color: white;
 
 .simple-chip-list {
   .chip {
     display: inline-block;
-    background-color: $chip-background-color;
-    color: $chip-text-color;
+    background-color: $chip-list-background-color;
+    color: $chip-list-text-color;
     padding: 6px;
     margin: 2px;
     font-size: .85rem;
@@ -18,7 +18,7 @@ $chip-text-color: white;
     }
 
     &.highlight {
-      background-color: $chip-highlighted-background-color;
+      background-color: $chip-list-highlighted-background-color;
       transition: none;
     }
 
