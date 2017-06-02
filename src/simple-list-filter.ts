@@ -4,7 +4,7 @@ import { inject, bindable, computedFrom } from 'aurelia-framework';
 export class SimpleListFilter {
   private filters: Array<FilterItem>;
 
-  @bindable title: string;
+  @bindable filterTitle: string;
   @bindable isCollapsed: boolean;
   @bindable items: Array<any>;
 
