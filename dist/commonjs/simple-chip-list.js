@@ -59,8 +59,22 @@ var SimpleChipList = (function () {
             this.element.dispatch('removed', chips);
         }
     };
+    SimpleChipList.prototype.bindItems = function () {
+        if (this.items && this.items.length) {
+            this.addChip(this.items.map(function (i) { return new Chip(i.text, i.data); }));
+        }
+    };
+    SimpleChipList.prototype.bind = function () {
+        this.bindItems();
+    };
+    SimpleChipList.prototype.itemsChanged = function () {
+        this.bindItems();
+    };
     return SimpleChipList;
 }());
+__decorate([
+    aurelia_framework_1.bindable
+], SimpleChipList.prototype, "items", void 0);
 SimpleChipList = __decorate([
     aurelia_framework_1.inject(Element)
 ], SimpleChipList);

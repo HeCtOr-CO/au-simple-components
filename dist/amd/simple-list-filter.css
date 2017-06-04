@@ -1,0 +1,54 @@
+.simple-list-filter {
+  max-width: 640px;
+  background-color: white;
+  padding: 0 0 1rem 0; }
+  .simple-list-filter .head {
+    display: flex;
+    cursor: pointer;
+    padding: 8px 8px 4px 8px; }
+    .simple-list-filter .head h4 {
+      margin: 0;
+      flex: calc(100% - 20px);
+      font-size: .875rem;
+      font-weight: 600;
+      line-height: 2; }
+    .simple-list-filter .head .collapse-uncollapse {
+      flex: 20px;
+      opacity: .5; }
+    .simple-list-filter .head:hover {
+      background-color: #F6F6F6; }
+  .simple-list-filter .body {
+    flex: 100%;
+    margin-left: 10px;
+    max-height: 275px;
+    overflow: hidden;
+    transition: height .5s; }
+    .simple-list-filter .body label.select-unselect {
+      font-size: .875rem;
+      font-style: italic;
+      color: gray;
+      cursor: pointer; }
+    .simple-list-filter .body .options-container {
+      max-height: 250px;
+      overflow-y: auto; }
+      .simple-list-filter .body .options-container .option {
+        display: flex;
+        cursor: pointer;
+        margin-bottom: 1px;
+        padding: 4px; }
+        .simple-list-filter .body .options-container .option .checkbox {
+          flex: 25px; }
+        .simple-list-filter .body .options-container .option .text {
+          flex: calc(100% - 50px);
+          font-size: .875rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: 1; }
+        .simple-list-filter .body .options-container .option .count {
+          flex: 25px;
+          font-size: .875rem;
+          text-align: right;
+          line-height: 1; }
+        .simple-list-filter .body .options-container .option:hover {
+          background-color: #F9F9F9; }

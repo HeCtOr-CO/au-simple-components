@@ -12,10 +12,12 @@ __export(require("./notifier"));
 __export(require("./paginable"));
 __export(require("./simple-paginator"));
 __export(require("./simple-chip-list"));
+__export(require("./simple-list-filter"));
 function configure(config) {
     config.globalResources([
         aurelia_framework_1.PLATFORM.moduleName('./simple-paginator'),
-        aurelia_framework_1.PLATFORM.moduleName('./simple-chip-list')
+        aurelia_framework_1.PLATFORM.moduleName('./simple-chip-list'),
+        aurelia_framework_1.PLATFORM.moduleName('./simple-list-filter')
     ]);
 }
 exports.configure = configure;

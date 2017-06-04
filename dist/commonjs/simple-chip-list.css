@@ -1,6 +1,6 @@
 .simple-chip-list .chip {
   display: inline-block;
-  background-color: #1779BA;
+  background-color: rgba(23, 121, 183, 0.75);
   color: white;
   padding: 6px;
   margin: 2px;
@@ -12,3 +12,7 @@
   .simple-chip-list .chip.highlight {
     background-color: #FFAE00;
     transition: none; }
+
+.simple-chip-list .clear-all {
+  background-color: #CC4B37;
+  cursor: pointer; }

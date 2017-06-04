@@ -7,4 +7,5 @@ export * from './notifier';
 export * from './paginable';
 export * from './simple-paginator';
 export * from './simple-chip-list';
+export * from './simple-list-filter';
 export declare function configure(config: FrameworkConfiguration): void;
