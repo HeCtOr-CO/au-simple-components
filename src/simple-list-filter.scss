@@ -6,12 +6,12 @@ $list-filter-option-background-color-hover: #F9F9F9;
 .simple-list-filter {
   max-width: 640px;
   background-color: $list-filter-background-color;
-  padding: 0 0 1rem 0;
+  padding: 0;
 
   .head {
     display: flex;
     cursor: pointer;
-    padding: 8px 8px 4px 8px;
+    padding: 8px;
 
     h4 {
       margin: 0;
