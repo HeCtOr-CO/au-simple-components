@@ -1,17 +1,19 @@
 $list-filter-background-color: white;
-$list-filter-head-background-color-hover: #F6F6F6;
+$list-filter-border-color: #e6e6e6;
+$list-filter-head-background-color: #F6F6F6;
 $list-filter-select-unselect-color: gray;
 $list-filter-option-background-color-hover: #F9F9F9;
 
 .simple-list-filter {
-  max-width: 640px;
   background-color: $list-filter-background-color;
   padding: 0;
+  border: 1px solid $list-filter-border-color;
 
   .head {
     display: flex;
     cursor: pointer;
-    padding: 8px;
+    padding: 4px;
+    background-color: $list-filter-head-background-color;
 
     h4 {
       margin: 0;
@@ -21,20 +23,17 @@ $list-filter-option-background-color-hover: #F9F9F9;
       line-height: 2;
     }
 
-    .collapse-uncollapse {
+    .expand-collapse {
       flex: 20px;
       opacity: .5;
-    }
-
-    &:hover {
-      background-color: $list-filter-head-background-color-hover;
     }
   }
 
   .body {
     flex: 100%;
-    margin-left: 10px;
-    max-height: 275px;
+    padding-left: 10px;
+    padding-left: 5px;
+    max-height: 285px;
     overflow: hidden;
     transition: height .5s;
 
@@ -47,7 +46,7 @@ $list-filter-option-background-color-hover: #F9F9F9;
 
     .options-container {
 
-      max-height: 250px;
+      max-height: 260px;
       overflow-y: auto;
 
       .option {

@@ -48,6 +48,12 @@ export abstract class DataService<TModel> implements IDataService<TModel> {
 
   simpleJsonFilterToUri(value: any) {
     if (!value) return null;
-    return Object.keys(value).map(key => `filter.${key}=${value[key] ? value[key] : ''}`).join('&');
+    return Object.keys(value).map(key => {
+      var currentValue = value[key];
+      if(currentValue instanceof Array) {
+        return (<Array<any>>currentValue).map(v => `filter.${key}=${v ? v : ''}`).join('&');
+      }
+      return `filter.${key}=${value[key] ? value[key] : ''}`
+    }).join('&');
   }
 }

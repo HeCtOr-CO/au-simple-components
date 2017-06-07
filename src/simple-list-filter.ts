@@ -5,7 +5,7 @@ export class SimpleListFilter {
   private filters: Array<FilterItem>;
 
   @bindable filterTitle: string;
-  @bindable isCollapsed: boolean;
+  isExpanded: boolean;
   @bindable items: Array<any>;
 
   private filterBodyElement: HTMLElement;
@@ -13,20 +13,32 @@ export class SimpleListFilter {
 
   constructor(private element: Element) {
     this.filters = [];
-    this.isCollapsed = false;
+    this.isExpanded = true;
   }
 
   getFilterItems(criteria: ((i: FilterItem) => void)) {
     return this.filters.filter(criteria);
   }
 
-  collapseUncollapse() {
-    this.isCollapsed = !this.isCollapsed;
+  expandCollapse() {
+    this.isExpanded = !this.isExpanded;
+    this.resetBodyHeight();
+  }
+
+  collapse() {
+    if (!this.isExpanded) return;
+    this.isExpanded = false;
+    this.resetBodyHeight();
+  }
+
+  expand() {
+    if (this.isExpanded) return;
+    this.isExpanded = true;
     this.resetBodyHeight();
   }
 
   private resetBodyHeight() {
-    if (this.isCollapsed) {
+    if (!this.isExpanded) {
       this.filterBodyElement.style.height = '0';
     } else {
       this.filterBodyElement.style.height = `${this.calcBodyElementHeight()}px`;
@@ -60,10 +72,11 @@ export class SimpleListFilter {
   private calcBodyElementHeight() {
     var itemHeight: number = 25;
     var selectUnselectLabelHeight: number = 25;
+    var spaceAtBottom: number = 10;
     return this.items && this.items.length
       ? this.items.length > 10
-        ? itemHeight * 10 + selectUnselectLabelHeight
-        : this.items.length * itemHeight + selectUnselectLabelHeight
+        ? itemHeight * 10 + selectUnselectLabelHeight + spaceAtBottom
+        : this.items.length * itemHeight + selectUnselectLabelHeight + spaceAtBottom
       : 0;
   }
 
@@ -76,8 +89,8 @@ export class SimpleListFilter {
     }
     var newHeight = this.calcBodyElementHeight();
     this.filterOptionsElement.style.height = `${newHeight - 25}px`;
-    if (this.isCollapsed)
-      this.collapseUncollapse();
+    if (!this.isExpanded)
+      this.expandCollapse();
     else
       this.resetBodyHeight();
   }
