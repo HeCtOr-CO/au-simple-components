@@ -71,8 +71,8 @@ export class SimpleListFilter {
 
   private calcBodyElementHeight() {
     var itemHeight: number = 25;
-    var selectUnselectLabelHeight: number = 25;
-    var spaceAtBottom: number = 10;
+    var selectUnselectLabelHeight: number = 35;
+    var spaceAtBottom: number = 5;
     return this.items && this.items.length
       ? this.items.length > 10
         ? itemHeight * 10 + selectUnselectLabelHeight + spaceAtBottom

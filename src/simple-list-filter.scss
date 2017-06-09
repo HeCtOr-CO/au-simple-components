@@ -35,7 +35,7 @@ $list-filter-option-background-color-hover: #F9F9F9;
     flex: 0 0 100%;
     padding-left: 10px;
     padding-left: 5px;
-    max-height: 285px;
+    max-height: 300px;
     overflow: hidden;
     transition: height .5s;
 
@@ -44,11 +44,12 @@ $list-filter-option-background-color-hover: #F9F9F9;
       font-style: italic;
       color: $list-filter-select-unselect-color;
       cursor: pointer;
+      margin: 5px 0;
     }
 
     .options-container {
 
-      max-height: 260px;
+      max-height: 265px;
       overflow-y: auto;
 
       .option {
