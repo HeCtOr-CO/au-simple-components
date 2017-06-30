@@ -2,13 +2,15 @@ export declare class SimpleListFilter {
     private element;
     private filters;
     filterTitle: string;
-    isCollapsed: boolean;
+    isExpanded: boolean;
     items: Array<any>;
     private filterBodyElement;
     private filterOptionsElement;
     constructor(element: Element);
     getFilterItems(criteria: ((i: FilterItem) => void)): FilterItem[];
-    collapseUncollapse(): void;
+    expandCollapse(): void;
+    collapse(): void;
+    expand(): void;
     private resetBodyHeight();
     toggleItems(criteria: ((i: FilterItem) => void), notify?: boolean): void;
     toggleAll(notify?: boolean): void;

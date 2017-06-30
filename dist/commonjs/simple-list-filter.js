@@ -11,17 +11,29 @@ var SimpleListFilter = (function () {
     function SimpleListFilter(element) {
         this.element = element;
         this.filters = [];
-        this.isCollapsed = false;
+        this.isExpanded = true;
     }
     SimpleListFilter.prototype.getFilterItems = function (criteria) {
         return this.filters.filter(criteria);
     };
-    SimpleListFilter.prototype.collapseUncollapse = function () {
-        this.isCollapsed = !this.isCollapsed;
+    SimpleListFilter.prototype.expandCollapse = function () {
+        this.isExpanded = !this.isExpanded;
+        this.resetBodyHeight();
+    };
+    SimpleListFilter.prototype.collapse = function () {
+        if (!this.isExpanded)
+            return;
+        this.isExpanded = false;
+        this.resetBodyHeight();
+    };
+    SimpleListFilter.prototype.expand = function () {
+        if (this.isExpanded)
+            return;
+        this.isExpanded = true;
         this.resetBodyHeight();
     };
     SimpleListFilter.prototype.resetBodyHeight = function () {
-        if (this.isCollapsed) {
+        if (!this.isExpanded) {
             this.filterBodyElement.style.height = '0';
         }
         else {
@@ -54,11 +66,12 @@ var SimpleListFilter = (function () {
     };
     SimpleListFilter.prototype.calcBodyElementHeight = function () {
         var itemHeight = 25;
-        var selectUnselectLabelHeight = 25;
+        var selectUnselectLabelHeight = 35;
+        var spaceAtBottom = 5;
         return this.items && this.items.length
             ? this.items.length > 10
-                ? itemHeight * 10 + selectUnselectLabelHeight
-                : this.items.length * itemHeight + selectUnselectLabelHeight
+                ? itemHeight * 10 + selectUnselectLabelHeight + spaceAtBottom
+                : this.items.length * itemHeight + selectUnselectLabelHeight + spaceAtBottom
             : 0;
     };
     SimpleListFilter.prototype.bindItems = function () {
@@ -71,8 +84,8 @@ var SimpleListFilter = (function () {
         }
         var newHeight = this.calcBodyElementHeight();
         this.filterOptionsElement.style.height = newHeight - 25 + "px";
-        if (this.isCollapsed)
-            this.collapseUncollapse();
+        if (!this.isExpanded)
+            this.expandCollapse();
         else
             this.resetBodyHeight();
     };
@@ -87,9 +100,6 @@ var SimpleListFilter = (function () {
 __decorate([
     aurelia_framework_1.bindable
 ], SimpleListFilter.prototype, "filterTitle", void 0);
-__decorate([
-    aurelia_framework_1.bindable
-], SimpleListFilter.prototype, "isCollapsed", void 0);
 __decorate([
     aurelia_framework_1.bindable
 ], SimpleListFilter.prototype, "items", void 0);

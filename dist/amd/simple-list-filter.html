@@ -1,12 +1,12 @@
 <template>
   <require from="./simple-list-filter.css"></require>
   <div class="simple-list-filter">
-    <div class="head" click.delegate="collapseUncollapse()">
+    <div class="head" click.delegate="expandCollapse()">
       <h4>
         ${filterTitle}
       </h4>
-      <div class="collapse-uncollapse">
-        <i class="fa ${isCollapsed?'fa-chevron-down': 'fa-chevron-up'}"></i>
+      <div class="expand-collapse">
+        <i class="fa ${isExpanded?'fa-chevron-down': 'fa-chevron-up'}"></i>
       </div>
     </div>
     <div ref="filterBodyElement" class="body">

@@ -27,7 +27,13 @@ var DataService = (function () {
     DataService.prototype.simpleJsonFilterToUri = function (value) {
         if (!value)
             return null;
-        return Object.keys(value).map(function (key) { return "filter." + key + "=" + (value[key] ? value[key] : ''); }).join('&');
+        return Object.keys(value).map(function (key) {
+            var currentValue = value[key];
+            if (currentValue instanceof Array) {
+                return currentValue.map(function (v) { return "filter." + key + "=" + (v ? v : ''); }).join('&');
+            }
+            return "filter." + key + "=" + (value[key] ? value[key] : '');
+        }).join('&');
     };
     return DataService;
 }());

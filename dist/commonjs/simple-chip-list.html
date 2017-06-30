@@ -4,6 +4,6 @@
     <div repeat.for="chip of chips" class="chip ${chip.highlighted? 'highlight' : ''}">
       ${chip.text}<i click.delegate="removeChip(chip)" title="Quitar" class="fa fa-times fa-fw remove"></i>
     </div>
-    <div if.bind="chips.length" click.delegate="clearAll()" class="chip clear-all">Eliminar todos</div>
+    <div if.bind="chips.length" click.delegate="clearAll()" class="chip clear-all">Quitar filtros</div>
   </div>
 </template>
