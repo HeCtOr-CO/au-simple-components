@@ -20,7 +20,7 @@ define(["require", "exports", "aurelia-framework", "./block-element"], function 
         Paginable.prototype.loadData = function () {
             var _this = this;
             this.dataContainer.block();
-            this.dataService.list(this.filter, this.sort, { number: this.pageNumber, size: this.pageSize })
+            return this.dataService.list(this.filter, this.sort, { number: this.pageNumber, size: this.pageSize })
                 .then(function (response) {
                 _this.model = response.data;
                 _this.totalCount = response.meta.totalCount;

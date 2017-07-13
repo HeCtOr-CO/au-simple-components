@@ -13,7 +13,7 @@ export declare class Paginable<TModel> {
     pageSize: number;
     totalCount: number;
     constructor(dataService: IDataService<TModel>);
-    loadData(): void;
+    loadData(): Promise<void>;
     resetPagination(): void;
     goToPage(number: number): void;
     sortBy(propertyName: string): any;
