@@ -1,4 +1,4 @@
-import { inject } from 'aurelia-framework';
+import { inject } from 'aurelia-dependency-injection';
 import { EventAggregator } from 'aurelia-event-aggregator';
 
 export interface IResult<TModel> {
@@ -14,7 +14,7 @@ export interface IDataService<TModel> {
 
   create(model: TModel): Promise<IResult<TModel>>;
 
-  update(id: any, model: any): Promise<boolean>;
+  update(model: TModel): Promise<boolean>;
 }
 
 @inject(EventAggregator)
@@ -30,7 +30,7 @@ export abstract class DataService<TModel> implements IDataService<TModel> {
 
   abstract create(model: TModel): Promise<IResult<TModel>>;
 
-  abstract update(id: any, model: any): Promise<boolean>;
+  abstract update(model: TModel): Promise<boolean>;
 
   publishServerError(methodName: string) {
     this.eventAggregator.publish('data-service:server-error', {
