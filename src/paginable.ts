@@ -33,7 +33,7 @@ export class Paginable<TModel> {
 
   loadData() {
     this.dataContainer.block();
-    this.dataService.list(this.filter, this.sort, { number: this.pageNumber, size: this.pageSize })
+    return this.dataService.list(this.filter, this.sort, { number: this.pageNumber, size: this.pageSize })
       .then(response => {
         this.model = response.data;
         this.totalCount = response.meta.totalCount;
