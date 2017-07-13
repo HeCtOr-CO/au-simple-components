@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var aurelia_framework_1 = require("aurelia-framework");
+var aurelia_dependency_injection_1 = require("aurelia-dependency-injection");
 var aurelia_event_aggregator_1 = require("aurelia-event-aggregator");
 var DataService = (function () {
     function DataService(eventAggregator) {
@@ -38,6 +38,6 @@ var DataService = (function () {
     return DataService;
 }());
 DataService = __decorate([
-    aurelia_framework_1.inject(aurelia_event_aggregator_1.EventAggregator)
+    aurelia_dependency_injection_1.inject(aurelia_event_aggregator_1.EventAggregator)
 ], DataService);
 exports.DataService = DataService;

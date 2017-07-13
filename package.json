@@ -1,6 +1,6 @@
 {
   "name": "au-simple-components",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "Aurelia simple components",
   "main": "dist/commonjs/au-simple-components.js",
   "scripts": {

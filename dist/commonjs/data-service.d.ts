@@ -11,7 +11,7 @@ export interface IDataService<TModel> {
         size: number;
     }): Promise<IResult<Array<TModel>>>;
     create(model: TModel): Promise<IResult<TModel>>;
-    update(id: any, model: any): Promise<boolean>;
+    update(model: TModel): Promise<boolean>;
 }
 export declare abstract class DataService<TModel> implements IDataService<TModel> {
     protected eventAggregator: EventAggregator;
@@ -22,7 +22,7 @@ export declare abstract class DataService<TModel> implements IDataService<TModel
         size: number;
     }): Promise<IResult<Array<TModel>>>;
     abstract create(model: TModel): Promise<IResult<TModel>>;
-    abstract update(id: any, model: any): Promise<boolean>;
+    abstract update(model: TModel): Promise<boolean>;
     publishServerError(methodName: string): void;
     publishConnectionError(methodName: string): void;
     simpleJsonFilterToUri(value: any): string;
