@@ -1,4 +1,3 @@
-import { EventAggregator } from 'aurelia-event-aggregator';
 export interface IResult<TModel> {
     data: TModel;
     meta?: any;
@@ -13,17 +12,4 @@ export interface IDataService<TModel> {
     create(model: TModel): Promise<IResult<TModel>>;
     update(model: TModel): Promise<boolean>;
 }
-export declare abstract class DataService<TModel> implements IDataService<TModel> {
-    protected eventAggregator: EventAggregator;
-    constructor(eventAggregator: EventAggregator);
-    abstract get(id: any): Promise<IResult<TModel>>;
-    abstract list(filter: any, sort: any, page: {
-        number: number;
-        size: number;
-    }): Promise<IResult<Array<TModel>>>;
-    abstract create(model: TModel): Promise<IResult<TModel>>;
-    abstract update(model: TModel): Promise<boolean>;
-    publishServerError(methodName: string): void;
-    publishConnectionError(methodName: string): void;
-    simpleJsonFilterToUri(value: any): string;
-}
+export declare function simpleJsonFilterToUri(value: any): string;
