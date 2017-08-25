@@ -4,6 +4,7 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
+var block_element_1 = require("./block-element");
 __export(require("./block-element"));
 __export(require("./data-service"));
 __export(require("./event-dispatcher"));
@@ -14,6 +15,7 @@ __export(require("./simple-paginator"));
 __export(require("./simple-chip-list"));
 __export(require("./simple-list-filter"));
 function configure(config) {
+    block_element_1.BlockElement.configure();
     config.globalResources([
         aurelia_framework_1.PLATFORM.moduleName('./simple-paginator'),
         aurelia_framework_1.PLATFORM.moduleName('./simple-chip-list'),

@@ -6,8 +6,7 @@ declare global  {
     }
 }
 export declare class BlockElement {
-    constructor();
-    configure(): void;
+    static configure(): void;
     private static block();
     private static unblock();
 }

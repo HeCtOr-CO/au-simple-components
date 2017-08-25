@@ -10,18 +10,16 @@ declare global {
 
 export class BlockElement {
 
-  constructor() {
-    this.configure();
+  static configure() {
+    // $.blockUI.defaults.message = '<i class="fa fa-spin fa-2x fa-spinner"></i>';
     (<any>Element.prototype).block = BlockElement.block;
     (<any>Element.prototype).unblock = BlockElement.unblock;
-  }
-
-  configure() {
-    // $.blockUI.defaults.message = '<i class="fa fa-spin fa-2x fa-spinner"></i>';
-    $.blockUI.defaults.message = '';
-    $.blockUI.defaults.css.border = 'none';
-    $.blockUI.defaults.css.backgroundColor = 'transparent';
-    $.blockUI.defaults.overlayCSS.backgroundColor = '#fff';
+    if ($.blockUI) {
+      $.blockUI.defaults.message = '';
+      $.blockUI.defaults.css.border = 'none';
+      $.blockUI.defaults.css.backgroundColor = 'transparent';
+      $.blockUI.defaults.overlayCSS.backgroundColor = '#fff';
+    }
   }
 
   private static block() {
@@ -38,6 +36,3 @@ export class BlockElement {
   }
 
 }
-
-let blockui: BlockElement;
-blockui = new BlockElement();

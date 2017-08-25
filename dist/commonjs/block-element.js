@@ -4,16 +4,17 @@ require("block-ui");
 var $ = require("jquery");
 var BlockElement = (function () {
     function BlockElement() {
-        this.configure();
+    }
+    BlockElement.configure = function () {
+        // $.blockUI.defaults.message = '<i class="fa fa-spin fa-2x fa-spinner"></i>';
         Element.prototype.block = BlockElement.block;
         Element.prototype.unblock = BlockElement.unblock;
-    }
-    BlockElement.prototype.configure = function () {
-        // $.blockUI.defaults.message = '<i class="fa fa-spin fa-2x fa-spinner"></i>';
-        $.blockUI.defaults.message = '';
-        $.blockUI.defaults.css.border = 'none';
-        $.blockUI.defaults.css.backgroundColor = 'transparent';
-        $.blockUI.defaults.overlayCSS.backgroundColor = '#fff';
+        if ($.blockUI) {
+            $.blockUI.defaults.message = '';
+            $.blockUI.defaults.css.border = 'none';
+            $.blockUI.defaults.css.backgroundColor = 'transparent';
+            $.blockUI.defaults.overlayCSS.backgroundColor = '#fff';
+        }
     };
     BlockElement.block = function () {
         var element = this;
@@ -30,5 +31,3 @@ var BlockElement = (function () {
     return BlockElement;
 }());
 exports.BlockElement = BlockElement;
-var blockui;
-blockui = new BlockElement();

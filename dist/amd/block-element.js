@@ -3,16 +3,17 @@ define(["require", "exports", "jquery", "block-ui"], function (require, exports,
     Object.defineProperty(exports, "__esModule", { value: true });
     var BlockElement = (function () {
         function BlockElement() {
-            this.configure();
+        }
+        BlockElement.configure = function () {
+            // $.blockUI.defaults.message = '<i class="fa fa-spin fa-2x fa-spinner"></i>';
             Element.prototype.block = BlockElement.block;
             Element.prototype.unblock = BlockElement.unblock;
-        }
-        BlockElement.prototype.configure = function () {
-            // $.blockUI.defaults.message = '<i class="fa fa-spin fa-2x fa-spinner"></i>';
-            $.blockUI.defaults.message = '';
-            $.blockUI.defaults.css.border = 'none';
-            $.blockUI.defaults.css.backgroundColor = 'transparent';
-            $.blockUI.defaults.overlayCSS.backgroundColor = '#fff';
+            if ($.blockUI) {
+                $.blockUI.defaults.message = '';
+                $.blockUI.defaults.css.border = 'none';
+                $.blockUI.defaults.css.backgroundColor = 'transparent';
+                $.blockUI.defaults.overlayCSS.backgroundColor = '#fff';
+            }
         };
         BlockElement.block = function () {
             var element = this;
@@ -29,6 +30,4 @@ define(["require", "exports", "jquery", "block-ui"], function (require, exports,
         return BlockElement;
     }());
     exports.BlockElement = BlockElement;
-    var blockui;
-    blockui = new BlockElement();
 });
