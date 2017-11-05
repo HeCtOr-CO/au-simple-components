@@ -21,6 +21,6 @@ export function simpleJsonFilterToUri(value: any) {
     if (currentValue instanceof Array) {
       return (<Array<any>>currentValue).map(v => `filter.${key}=${v ? v : ''}`).join('&');
     }
-    return `filter.${key}=${value[key] ? value[key] : ''}`
+    return `filter.${key}=${(value[key] === null || value[key] === undefined) ? '' : value[key]}`
   }).join('&');
 }
